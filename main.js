@@ -1,6 +1,6 @@
 parolaScritta(prompt("inserisci una parola"));
 
-isEvenOrOdd(prompt("pari o dispari?"), prompt("gioca il tuo numero! (da 1 a 5)"));
+isEvenOrOdd(prompt("pari o dispari?"), parseInt(prompt("gioca il tuo numero! (da 1 a 5)")));
 
 
 
@@ -82,5 +82,7 @@ function isEven(number){
 }
 // ! even or odd
 function isEvenOrOdd(userEenOrOdd, userNumber){
-
+    const botNumber = Math.floor(Math.random() * 5);
+    console.log(`il bot ha giocato ${botNumber}`);
+    console.log(`tu hai giocato ${userNumber}`);
 }
