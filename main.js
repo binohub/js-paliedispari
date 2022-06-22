@@ -17,40 +17,6 @@ isEvenOrOdd(prompt("pari o dispari?"), parseInt(prompt("gioca il tuo numero!")))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ! calcola il quadrato del numero uno e del numero due
 // function calcQuadrato(numberOne, numberTwo) {
 //         console.log(numberOne * numberOne);
@@ -82,7 +48,7 @@ function isEven(number){
 }
 // ! even or odd
 function isEvenOrOdd(userEenOrOdd, userNumber){
-    const botNumber = Math.floor(Math.random() * 5);
+    const botNumber = Math.floor(Math.random() * 5) + 1;
     let risultato = "";
     console.log(`il bot ha giocato ${botNumber}`);
     console.log(`tu hai giocato ${userNumber}`);
@@ -92,9 +58,11 @@ function isEvenOrOdd(userEenOrOdd, userNumber){
     if (somma % 2 === 0) {
         risultato = "pari";
         console.log(risultato);
-    }else{
+    }else if (somma % 2 === 1) {
         risultato = "dispari";
         console.log(risultato);
+    }else{
+        console.log("inserisci un NUMERO valido");
     }
 
     if (userEenOrOdd === risultato){
