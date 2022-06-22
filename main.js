@@ -1,5 +1,8 @@
 parolaScritta(prompt("inserisci una parola"));
 
+isEvenOrOdd(prompt("pari o dispari?"), prompt("gioca il tuo numero! (da 1 a 5)"));
+
+
 
 
 
@@ -76,4 +79,8 @@ function isEven(number){
     return true;
     }
     return false;
+}
+// ! even or odd
+function isEvenOrOdd(userEenOrOdd, userNumber){
+
 }
