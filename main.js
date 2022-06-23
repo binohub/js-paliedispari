@@ -1,21 +1,13 @@
-parolaScritta(prompt("inserisci una parola"));
+const parolaUtente = prompt("inserisci una parola");
+parolaScritta(parolaUtente);
 
-isEvenOrOdd(prompt("pari o dispari?"), parseInt(prompt("gioca il tuo numero!")));
+let userEvenOrOdd = prompt("pari o dispari?").toLowerCase();
+while (userEvenOrOdd != "pari" && userEvenOrOdd != "dispari") {
+    userEvenOrOdd = prompt("GENTILMENTE... ho detto: pari o dispari??");
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let userNumber = parseInt(prompt("gioca il tuo numero!"));
+isEvenOrOdd(userEvenOrOdd, userNumber); 
 
 // ! calcola il quadrato del numero uno e del numero due
 // function calcQuadrato(numberOne, numberTwo) {
@@ -26,10 +18,11 @@ isEvenOrOdd(prompt("pari o dispari?"), parseInt(prompt("gioca il tuo numero!")))
 // calcQuadrato(2, 5)
 // ! stampa la parola scritta(parola), leggendola al contrario capisci se è palindroma 
 function parolaScritta(parola){
+    parola = parola.toLowerCase();
     let parolaInvertita = "";
     console.log(parola);
     for (let i = parola.length - 1; i >= 0; i--) {
-        parolaInvertita += parola[i]; 
+        parolaInvertita += parola.charAt(i); 
     }
     console.log(parolaInvertita);
     if (parolaInvertita === parola) {
@@ -47,12 +40,12 @@ function isEven(number){
     return false;
 }
 // ! even or odd
-function isEvenOrOdd(userEenOrOdd, userNumber){
+function isEvenOrOdd(EvenOrOdd, Number){
     const botNumber = Math.floor(Math.random() * 5) + 1;
     let risultato = "";
     console.log(`il bot ha giocato ${botNumber}`);
-    console.log(`tu hai giocato ${userNumber}`);
-    const somma = botNumber + userNumber;
+    console.log(`tu hai giocato ${Number}`);
+    const somma = botNumber + Number;
     console.log(`la somma è di ${somma}`);
 
     if (somma % 2 === 0) {
@@ -65,10 +58,9 @@ function isEvenOrOdd(userEenOrOdd, userNumber){
         console.log("inserisci un NUMERO valido");
     }
 
-    if (userEenOrOdd === risultato){
+    if (EvenOrOdd === risultato){
         console.log("hai vinto!");
     } else{
         console.log("hai perso!");
     }
-
 }
