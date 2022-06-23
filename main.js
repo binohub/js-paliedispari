@@ -2,11 +2,15 @@ const parolaUtente = prompt("inserisci una parola");
 parolaScritta(parolaUtente);
 
 let userEvenOrOdd = prompt("pari o dispari?").toLowerCase();
+console.log(`hai scelto ${userEvenOrOdd}`);
 while (userEvenOrOdd != "pari" && userEvenOrOdd != "dispari") {
-    userEvenOrOdd = prompt("GENTILMENTE... ho detto: pari o dispari??");
+    userEvenOrOdd = prompt("GENTILMENTE... ho detto: pari o dispari??").toLowerCase();
+}
+let userNumber = parseInt(prompt("gioca il tuo numero, ricorda da 1 a 5"));
+while (isNaN(userNumber) || (userNumber < 1 || userNumber > 5)) {
+    userNumber = parseInt(prompt("da 1 a 5 ho detto :D"));
 }
 
-let userNumber = parseInt(prompt("gioca il tuo numero!"));
 isEvenOrOdd(userEvenOrOdd, userNumber); 
 
 // ! calcola il quadrato del numero uno e del numero due
